@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd frontend && npm install --no-package-lock && npm run build",
+  "outputDirectory": "frontend/build",
+  "installCommand": "echo 'Skipping root install'",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "REACT_APP_API_BASE_URL": "https://mediconnect-api.onrender.com/api",
+    "HUSKY": "0"
+  }
+} 

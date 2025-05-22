@@ -1,0 +1,96 @@
+/* Appointment booking styles */
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.time-slots .form-check {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: all 0.2s;
+  flex-direction: row !important;
+  height: auto;
+  position: relative;
+}
+
+.time-slots .form-check:hover {
+  background-color: rgba(25, 118, 210, 0.1);
+}
+
+.time-slots .form-check-input {
+  position: static !important;
+  margin-top: 0 !important;
+  margin-right: 10px !important;
+  margin-left: 0 !important;
+  float: none !important;
+}
+
+.time-slots .form-check-label {
+  margin-bottom: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
+  position: static !important;
+  width: auto;
+  padding-left: 0 !important;
+  cursor: pointer;
+}
+
+/* Custom TimeSlot component styling */
+.time-slot-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.time-slot-wrapper:hover {
+  background-color: rgba(25, 118, 210, 0.1);
+}
+
+.time-slot-input {
+  margin-right: 10px;
+  margin-top: 0;
+  margin-left: 0;
+  float: none;
+  position: static;
+}
+
+.time-slot-label {
+  margin-bottom: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Fix for different browsers */
+@-moz-document url-prefix() {
+  .time-slots .form-check-input,
+  .time-slot-input {
+    margin-top: 0 !important;
+  }
+}
+
+/* IE and Edge */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .time-slots .form-check,
+  .time-slot-wrapper {
+    display: flex;
+  }
+  
+  .time-slots .form-check-input,
+  .time-slot-input {
+    margin-top: 0;
+  }
+} 

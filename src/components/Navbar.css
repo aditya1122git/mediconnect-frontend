@@ -1,0 +1,222 @@
+/* Navbar.css - Custom styling for the Navbar component */
+
+/* Navbar container */
+.navbar {
+  padding: 0.15rem 1rem !important; /* Further reduced padding to decrease height */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Brand and logo styling */
+.navbar-brand {
+  font-weight: 700 !important;
+  font-size: 1.4rem !important; /* Slightly smaller brand font */
+  display: flex !important;
+  align-items: center !important;
+  transition: transform 0.3s ease !important;
+}
+
+.navbar-brand svg {
+  width: 24px !important; /* Stethoscope logo size */
+  height: 24px !important;
+  margin-right: 8px !important; 
+}
+
+.brand-text {
+  font-size: 1.8rem !important; /* Increased brand text size */
+  font-weight: 700 !important;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Info links (About, Contact, Privacy) styling */
+.info-links {
+  display: flex !important;
+  align-items: center !important;
+  margin-right: 15px !important;
+}
+
+.info-link {
+  font-size: 0.75rem !important; /* Smaller font for info links */
+  padding: 0.3rem 0.5rem !important; /* Reduced padding */
+  opacity: 0.9 !important;
+  font-weight: 400 !important;
+}
+
+.info-link:hover {
+  opacity: 1 !important;
+  transform: translateY(-1px) !important;
+}
+
+.fas.fa-heartbeat {
+  color: #fff !important;
+  margin-right: 0.5rem !important;
+  transition: transform 0.3s !important;
+}
+
+.fas.fa-heartbeat:hover {
+  transform: scale(1.2) !important;
+}
+
+/* Fix for dropdown menu */
+.dropdown-menu {
+  margin-top: 0.3rem !important; /* Reduced spacing */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  min-width: 200px !important;
+  max-width: 300px !important;
+  padding: 0.5rem 0 !important;
+  overflow: visible !important;
+}
+
+.dropdown-item {
+  padding: 0.6rem 1.5rem !important; /* Reduced padding */
+  font-weight: 500 !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  line-height: 1.3 !important;
+  font-size: 0.95rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+/* Nav links with icons */
+.nav-link {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.35rem 0.6rem !important; /* Reduced padding for more compact nav */
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: all 0.3s !important;
+  white-space: nowrap !important;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 0.3rem !important; /* Reduced margin */
+  transition: transform 0.3s !important;
+}
+
+.nav-link .icon svg {
+  width: 14px !important; /* Smaller icons */
+  height: 14px !important;
+}
+
+.nav-link:hover .icon {
+  transform: scale(1.2) !important;
+}
+
+/* Fix spacing between items */
+.navbar-nav {
+  margin-left: auto !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+
+.nav-item {
+  margin: 0 0.1rem !important; /* Reduced margin for tighter layout */
+  transition: all 0.3s !important;
+}
+
+/* Make patient nav items more compact for single line */
+.navbar-nav .nav-item .nav-link span:not(.icon) {
+  font-size: 0.85rem !important; /* Smaller text to fit better */
+}
+
+/* Mobile menu styling */
+.navbar-toggler {
+  border: none !important;
+  padding: 0.4rem !important; /* Reduced padding */
+  transition: transform 0.3s !important;
+}
+
+.navbar-toggler-icon {
+  width: 1.2em !important; /* Smaller toggle icon */
+  height: 1.2em !important;
+}
+
+.navbar-toggler:hover {
+  transform: rotate(90deg) !important;
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix for general dropdowns in forms */
+.form-group select.form-control,
+.form-group .dropdown-menu {
+  min-width: 220px !important;
+  max-width: 100% !important;
+  text-overflow: ellipsis !important;
+  overflow: visible !important; /* Ensure dropdown content is not cut off */
+}
+
+.form-control option {
+  white-space: normal !important;
+  padding: 0.5rem !important;
+  word-wrap: break-word !important;
+}
+
+/* Make sure that the collapse menu opens fully */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0 !important;
+  }
+  
+  .navbar-nav {
+    padding-bottom: 0.5rem !important;
+    flex-wrap: wrap !important; /* Allow wrapping on mobile */
+  }
+  
+  .nav-item {
+    margin: 0.25rem 0 !important;
+    width: 100% !important; /* Take full width on mobile */
+  }
+  
+  .dropdown-menu {
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+  }
+}
+
+/* Admin specific styling */
+.admin-dropdown .dropdown-item {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+/* Ensure dropdown menus are visible */
+.dropdown-menu.show {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+} 

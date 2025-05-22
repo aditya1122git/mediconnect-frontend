@@ -1,0 +1,87 @@
+/* Custom form styling for MediConnect */
+
+/* Select dropdown styling */
+.form-control,
+select.form-control,
+.custom-select {
+  display: block !important;
+  width: 100% !important;
+  height: calc(1.5em + 0.75rem + 2px) !important;
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+  text-indent: 1px !important;
+  text-overflow: clip !important;
+}
+
+/* Dropdown option styling */
+select.form-control option,
+.custom-select option {
+  color: #333 !important;
+  background-color: #fff !important;
+  padding: 0.5rem !important;
+  font-size: 1rem !important;
+}
+
+/* Focus state */
+.form-control:focus,
+select.form-control:focus,
+.custom-select:focus {
+  border-color: #80bdff !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Additional specificity for select elements to override Bootstrap styling */
+.form-group select.form-control,
+.form-group .custom-select {
+  color: #495057 !important;
+  background-color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix dropdown arrows */
+select.form-control:not([size]):not([multiple]),
+.custom-select:not([size]):not([multiple]) {
+  height: calc(1.5em + 0.75rem + 2px) !important;
+  padding-right: 1.75rem !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.75rem center !important;
+  background-size: 8px 10px !important;
+}
+
+/* Override any potential Bootstrap !important rules */
+select.form-control::-ms-value,
+.custom-select::-ms-value {
+  color: #495057 !important;
+  background-color: #fff !important;
+}
+
+/* Direct styling for the specific fields in Profile.jsx */
+#gender,
+#specialization {
+  color: #333 !important;
+  background-color: #fff !important;
+  font-weight: normal !important;
+}
+
+/* Select elements in profile form */
+.profile .form-group select {
+  color: #333 !important;
+  background-color: #fff !important;
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+} 

@@ -1,0 +1,552 @@
+/* Medical Theme Stylesheet */
+:root {
+  --primary-color: #1976d2;
+  --primary-dark: #004ba0;
+  --primary-light: #63a4ff;
+  --secondary-color: #26a69a;
+  --secondary-dark: #00766c;
+  --secondary-light: #64d8cb;
+  --success-color: #66bb6a;
+  --error-color: #f44336;
+  --warning-color: #ffa726;
+  --info-color: #29b6f6;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --mid-gray: #e0e0e0;
+  --dark-gray: #757575;
+  --text-dark: #212121;
+  --text-light: #757575;
+  --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8fcff;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Medical Theme Card Styles */
+.med-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border-left: 4px solid var(--primary-color);
+}
+
+.med-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.med-card-title {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.med-card-title i {
+  margin-right: 0.5rem;
+  color: var(--secondary-color);
+}
+
+/* Medical Icons and Indicators */
+.health-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(25, 118, 210, 0.1);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.health-icon.heart {
+  color: #e57373;
+}
+
+.health-icon.blood-pressure {
+  color: #5c6bc0;
+}
+
+.health-icon.weight {
+  color: #66bb6a;
+}
+
+.health-icon.glucose {
+  color: #ffb74d;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply animations */
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Stagger animations for lists */
+.animate-stagger > * {
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.animate-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.animate-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Enhanced Button Styles */
+.btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+  color: white;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 5px 15px rgba(38, 166, 154, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Form Styling */
+.form-control {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--mid-gray);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Health Summary Styling */
+.health-summary {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.summary-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  border-left: 3px solid var(--secondary-color);
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+/* Enhanced Chart Styling */
+.chart-container {
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+.chart-container:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.loading::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--mid-gray);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.table th {
+  background-color: var(--light-gray);
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(25, 118, 210, 0.05);
+}
+
+/* Medical Dashboard-specific styles */
+.dashboard-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.recent-entries {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.entries-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.entry-card {
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.entry-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(25, 118, 210, 0.05);
+}
+
+.entry-card.selected {
+  border-left: 6px solid var(--primary-dark);
+  background-color: rgba(25, 118, 210, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.entry-card h3 {
+  margin-top: 0;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entry-date-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.recorded-by {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.expanded-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.expanded-details > div {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.summary-date {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-left: 0.75rem;
+  color: var(--text-muted);
+}
+
+.recorded-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Record Health form styling */
+.record-health .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.record-health .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.blood-pressure-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blood-pressure-inputs input {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .summary-grid,
+  .entries-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-actions {
+    flex-direction: column;
+  }
+}
+
+/* Appointment booking time slots */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.time-slots .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  background-color: var(--light-gray);
+  transition: all 0.2s;
+  position: relative;
+  flex-direction: row;
+  height: auto;
+}
+
+.time-slots .form-check:hover {
+  background-color: rgba(25, 118, 210, 0.05);
+}
+
+.time-slots .form-check-input {
+  margin-right: 10px;
+  margin-top: 0;
+  position: static;
+  float: none;
+  flex-shrink: 0;
+}
+
+.time-slots .form-check-label {
+  margin-bottom: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
+  position: static;
+  width: auto;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Custom fixes for Bootstrap form-check */
+.time-slots .form-check input[type="radio"] {
+  transform: translateY(0);
+}
+
+/* Dashboard header styling */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.dashboard-header .subtitle {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.dashboard-header .subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 3px;
+}
+
+/* Patient Records Specific Styling */
+.patient-records .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.patient-records .page-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--primary-dark);
+}
+
+.patient-info {
+  margin-bottom: 2rem;
+}
+
+.patient-info p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.patient-info p strong {
+  display: inline-block;
+  width: 120px;
+  color: var(--text-light);
+}
+
+.selected-record-details {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  margin-top: 2rem;
+}
+
+.back-link a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.back-link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.back-link a::before {
+  content: '←';
+  margin-right: 0.5rem;
+}
+
+/* ... existing code ... */ 
