@@ -3,7 +3,11 @@
   "outputDirectory": "build",
   "installCommand": "echo 'Skipping root install'",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" },
+    {
+      "source": "/api/:path*",
+      "destination": "https://mediconnect-backend-5894.onrender.com/api/:path*"
+    }
   ],
   "env": {
     "REACT_APP_API_BASE_URL": "https://mediconnect-backend-5894.onrender.com/api",
