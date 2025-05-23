@@ -16,21 +16,31 @@ const DoctorsList = () => {
 
   // Specialization options
   const specializations = [
-    'Cardiology',
-    'Dermatology',
-    'Endocrinology',
-    'Family Medicine',
-    'Gastroenterology',
-    'General Practice',
-    'Neurology',
-    'Obstetrics/Gynecology',
-    'Oncology',
-    'Orthopedics',
-    'Pediatrics',
-    'Psychiatry',
-    'Pulmonology',
-    'Radiology',
-    'Urology'
+   "General Medicine",
+  "Family Medicine",
+  "Internal Medicine",
+  "Pediatrics",
+  "Cardiology",
+  "Dermatology",
+  "Neurology",
+  "Orthopedics",
+  "Gynecology",
+  "Obstetrics",
+  "Oncology",
+  "Ophthalmology",
+  "Otolaryngology",
+  "Psychiatry",
+  "Radiology",
+  "Urology",
+  "Anesthesiology",
+  "Endocrinology",
+  "Gastroenterology",
+  "Hematology",
+  "Nephrology",
+  "Pulmonology",
+  "Rheumatology",
+  "Surgery",
+  "Emergency Medicine"
   ];
 
   const fetchDoctors = useCallback(async () => {
