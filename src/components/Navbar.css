@@ -138,25 +138,50 @@
   font-size: 0.85rem !important; /* Smaller text to fit better */
 }
 
-/* Mobile menu styling */
+/* Mobile menu styling - FIXED */
 .navbar-toggler {
   border: none !important;
-  padding: 0.4rem !important; /* Reduced padding */
-  transition: transform 0.3s !important;
+  padding: 0.4rem !important;
+  transition: all 0.3s ease !important; /* Smooth transition */
+  transform-origin: center !important; /* Rotate from center */
+  background: transparent !important;
+  outline: none !important;
 }
 
 .navbar-toggler-icon {
-  width: 1.2em !important; /* Smaller toggle icon */
+  width: 1.2em !important;
   height: 1.2em !important;
+  transition: all 0.3s ease !important; /* Smooth icon transition */
+  transform-origin: center !important;
 }
 
-.navbar-toggler:hover {
+/* Active state for toggle button */
+.navbar-toggler[aria-expanded="true"] {
   transform: rotate(90deg) !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  opacity: 0.8 !important;
+}
+
+/* Hover effect for toggle button */
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
 }
 
 .navbar-toggler:focus {
   outline: none !important;
-  box-shadow: none !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Improved mobile navbar collapse animation */
+.navbar-collapse {
+  transition: all 0.3s ease-in-out !important;
+}
+
+.navbar-collapse.collapsing {
+  transition: height 0.3s ease !important;
 }
 
 /* Fix for general dropdowns in forms */
@@ -206,6 +231,17 @@
     background-color: rgba(255, 255, 255, 0.1) !important;
     color: #fff !important;
   }
+
+  /* Enhanced mobile toggle button */
+  .navbar-toggler {
+    padding: 0.5rem !important;
+    margin-right: 0 !important;
+    border-radius: 6px !important;
+  }
+  
+  .navbar-toggler:active {
+    transform: rotate(90deg) scale(0.95) !important;
+  }
 }
 
 /* Admin specific styling */
@@ -219,4 +255,17 @@
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-} 
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 576px) {
+  .navbar-toggler {
+    padding: 0.6rem !important;
+    margin-right: -0.5rem !important;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1.4em !important;
+    height: 1.4em !important;
+  }
+}
