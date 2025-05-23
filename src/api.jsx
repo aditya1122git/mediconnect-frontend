@@ -2,11 +2,12 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || window.location.hostname === 'localhost' 
-    ? 'http://localhost:5002/api' 
-    : 'https://mediconnect-api.onrender.com/api',
+  baseURL: process.env.REACT_APP_API_URL || 
+    (window.location.hostname === 'localhost' 
+      ? 'http://localhost:5002/api' 
+      : 'https://mediconnect-z65n.onrender.com/api'),
   timeout: 15000, // Increased timeout to 15 seconds
-  withCredentials: true, // Enable credentials to ensure cookies are sent
+  withCredentials: false, // Disable credentials for cross-origin requests
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'

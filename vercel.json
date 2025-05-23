@@ -6,7 +6,7 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "env": {
-    "REACT_APP_API_BASE_URL": "https://mediconnect-z65n.onrender.com/api",
+    "REACT_APP_API_BASE_URL": "https://mediconnect-backend-5894.onrender.com/api",
     "HUSKY": "0"
   }
 } 
