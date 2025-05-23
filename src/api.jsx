@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: '/api', // Using Vercel proxy
+  baseURL: 'https://mediconnect-backend-5894.onrender.com/api', // Updated to use Render backend
   timeout: 15000, // Increased timeout to 15 seconds
   withCredentials: false, // Disable credentials for cross-origin requests
   headers: {
